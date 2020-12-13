@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item" [class.active]="aba == 'home'">
+          <a class="nav-link" href="#" (click)="aba = 'home'">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" [class.active]="aba == 'features'">
+          <a class="nav-link" href="#" (click)="aba = 'features'">Features</a>
+        </li>
+        <li class="nav-item" [class.active]="aba == 'princing'">
+          <a class="nav-link" href="#" (click)="aba = 'pricing'">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container" [ngSwitch]="aba">
+    <p *ngSwitchCase="'home'">Modo home ativado</p>
+    <p *ngSwitchCase="'features'">Modo features ativado</p>
+    <p *ngSwitchCase="'pricing'">Modo pricing ativado</p>
+    <p *ngSwitchDefault>Modo default ativado</p>
+  </div>
